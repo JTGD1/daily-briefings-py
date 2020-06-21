@@ -4,4 +4,7 @@ python-dotenv
 requests
 sendgrid==6.0.5
 flask
+gunicorn
 
+
+#packages needed
