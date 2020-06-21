@@ -5,17 +5,20 @@ from flask import Blueprint, render_template, redirect, request, flash
 home_routes = Blueprint("home_routes", __name__)
 
 
+
+
 @home_routes.route("/")
 def index():
     print("VISITED THE HOME PAGE")
-    #return render_template("dashboard.html")
-    return "Welcome Home (TODO)"
+    #return "Welcome Home (TODO)"
+    return render_template("home.html")
 
 
 @home_routes.route("/about")
 def about():
     print("VISITED THE ABOUT PAGE")
-    return "About Me (TODO)"
+    #return "About Me (TODO)"
+    return render_template("about.html")
 
 
 #@home_routes.route("/register")
@@ -43,6 +46,5 @@ def create_user():
     # FYI: "warning", "primary", "danger", "success", etc. are bootstrap color classes
     # ... see https://getbootstrap.com/docs/4.3/components/alerts/
     # ... and the flash messaging section of the "bootstrap_layout.html" file for more details
-    flash(
-        f"User '{user['full_name']}' created successfully! (TODO)", "warning")
+    flash(f"User '{user['full_name']}' created successfully! (TODO)", "warning")
     return redirect("/")
